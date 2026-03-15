@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PWR Design | Autorska pracownia wnętrz</title>
+  <meta name="description" content="PWR Design to autorska pracownia wnętrz Pauliny Wysokińskiej-Rączki. Projektowanie wnętrz, mebli i wyposażenia w nowoczesnym, wyrazistym stylu.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+  </div>
+
+  <!-- Noise Overlay -->
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-line"></div>
+      <span class="loader-text">PWR Design</span>
+      <div class="loader-counter">
+        <span id="loader-num">0</span>%
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <a class="nav-brand" href="#hero">
+      <span class="nav-brand-name">PWR</span>
+      <span class="nav-brand-sub">Design</span>
+    </a>
+
+    <nav class="nav-links" id="nav-links">
+      <a href="#studio" data-nav>Studio</a>
+      <a href="#oferta" data-nav>Oferta</a>
+      <a href="#projekty" data-nav>Kadry</a>
+      <a href="#proces" data-nav>Proces</a>
+    </nav>
+
+    <a class="nav-cta magnetic" href="#kontakt">
+      <span>Porozmawiajmy</span>
+    </a>
+
+    <button class="nav-burger" id="nav-burger" type="button" aria-label="Menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-links">
+      <a href="#studio" class="mobile-link" data-mobile-nav>Studio</a>
+      <a href="#oferta" class="mobile-link" data-mobile-nav>Oferta</a>
+      <a href="#projekty" class="mobile-link" data-mobile-nav>Kadry</a>
+      <a href="#proces" class="mobile-link" data-mobile-nav>Proces</a>
+      <a href="#kontakt" class="mobile-link" data-mobile-nav>Kontakt</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="hero-bg">
+        <div class="hero-gradient"></div>
+        <div class="hero-particles" id="hero-particles"></div>
+      </div>
+
+      <div class="hero-content">
+        <p class="hero-kicker">
+          <span class="line-mask"><span class="line-inner">Sulejówek — Warszawa — od 2018</span></span>
+        </p>
+
+        <h1 class="hero-title">
+          <span class="title-line"><span class="title-word">Projektujemy</span></span>
+          <span class="title-line"><span class="title-word">przestrzenie,</span> <span class="title-word">które</span></span>
+          <span class="title-line"><span class="title-word accent">mają</span> <span class="title-word accent">duszę</span></span>
+        </h1>
+
+        <p class="hero-desc">
+          <span class="line-mask"><span class="line-inner">PWR Design tworzy wnętrza, meble oraz wyposażenie</span></span>
+          <span class="line-mask"><span class="line-inner">z myślą o człowieku, nie o chwilowej modzie.</span></span>
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary magnetic" href="#kontakt">
+            <span class="btn-text">Umów rozmowę</span>
+            <span class="btn-arrow">→</span>
+          </a>
+          <a class="btn btn-ghost magnetic" href="#projekty">
+            <span class="btn-text">Zobacz projekty</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-img-wrap" id="hero-img-main">
+          <img src="assets/images/living-green.jpg" alt="Nowoczesny salon z zieloną sofą">
+        </div>
+        <div class="hero-img-float" id="hero-img-float">
+          <img src="assets/images/bath-green.png" alt="Łazienka z zielonymi akcentami">
+        </div>
+      </div>
+
+      <div class="hero-scroll-hint">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+
+      <!-- Marquee -->
+      <div class="marquee">
+        <div class="marquee-track">
+          <span>wnętrza</span><span class="sep">✦</span>
+          <span>meble</span><span class="sep">✦</span>
+          <span>wyposażenie</span><span class="sep">✦</span>
+          <span>światło</span><span class="sep">✦</span>
+          <span>materiał</span><span class="sep">✦</span>
+          <span>funkcja</span><span class="sep">✦</span>
+          <span>emocje</span><span class="sep">✦</span>
+          <span>charakter</span><span class="sep">✦</span>
+          <span>wnętrza</span><span class="sep">✦</span>
+          <span>meble</span><span class="sep">✦</span>
+          <span>wyposażenie</span><span class="sep">✦</span>
+          <span>światło</span><span class="sep">✦</span>
+          <span>materiał</span><span class="sep">✦</span>
+          <span>funkcja</span><span class="sep">✦</span>
+          <span>emocje</span><span class="sep">✦</span>
+          <span>charakter</span><span class="sep">✦</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio -->
+    <section class="section" id="studio">
+      <div class="section-header">
+        <span class="kicker"><span class="kicker-line"></span>O studiu</span>
+        <h2 class="section-title split-text">
+          Za PWR Design stoi <em>uważność</em>, odwaga i myślenie o wnętrzu jak o sztuce użytkowej.
+        </h2>
+      </div>
+
+      <div class="studio-grid">
+        <div class="studio-img parallax-wrap">
+          <div class="img-reveal">
+            <img src="assets/images/studio-desk.jpg" alt="Biurko projektowe" class="parallax-img">
+          </div>
+          <div class="img-caption">materiał / światło / układ / detal</div>
+        </div>
+
+        <div class="studio-text">
+          <p class="fade-up">Naszym celem jest tworzenie przestrzeni, które mają sens, emocje i charakter. Design traktujemy świadomie: ma porządkować życie, wzmacniać tożsamość miejsca i nie zestarzeć się po jednym sezonie.</p>
+          <p class="fade-up">PWR Design nie kopiuje trendów. Buduje wnętrza dopasowane do ludzi, ich rytmu dnia, przyzwyczajeń i tego, jak naprawdę chcą mieszkać.</p>
+
+          <div class="values">
+            <div class="value-item fade-up">
+              <span class="value-num">01</span>
+              <h3>Sens przed modą</h3>
+              <p>Każda decyzja wizualna ma pracować na codzienny komfort.</p>
+            </div>
+            <div class="value-item fade-up">
+              <span class="value-num">02</span>
+              <h3>Odwaga bez chaosu</h3>
+              <p>Wyraziste akcenty są tu po coś, a nie tylko dla efektu.</p>
+            </div>
+            <div class="value-item fade-up">
+              <span class="value-num">03</span>
+              <h3>Detal z charakterem</h3>
+              <p>Meble, lampy i materiały spinają całość w jeden czytelny ton.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manifesto - Full width statement -->
+    <section class="manifesto">
+      <div class="manifesto-inner">
+        <h2 class="manifesto-text split-text">
+          Nie interesuje nas wnętrze, które tylko <em>ładnie wygląda</em>. Interesuje nas wnętrze, które <em>działa</em> i zostaje w pamięci.
+        </h2>
+      </div>
+    </section>
+
+    <!-- Oferta -->
+    <section class="section" id="oferta">
+      <div class="section-header">
+        <span class="kicker"><span class="kicker-line"></span>Oferta</span>
+        <h2 class="section-title split-text">
+          Od pierwszego układu po ostatni detal, <em>spójnie</em> i z wyczuciem.
+        </h2>
+      </div>
+
+      <div class="offer-grid">
+        <article class="offer-card fade-up">
+          <div class="offer-card-inner">
+            <span class="offer-num">01</span>
+            <h3>Projekt wnętrza</h3>
+            <p>Funkcja, proporcje, materiały, kolor i światło układane w jeden wyrazisty, ale życiowy scenariusz.</p>
+            <div class="offer-line"></div>
+          </div>
+        </article>
+        <article class="offer-card fade-up">
+          <div class="offer-card-inner">
+            <span class="offer-num">02</span>
+            <h3>Meble do przestrzeni</h3>
+            <p>Zabudowy i meble projektowane tak, by porządkowały wnętrze i budowały jego charakter.</p>
+            <div class="offer-line"></div>
+          </div>
+        </article>
+        <article class="offer-card fade-up">
+          <div class="offer-card-inner">
+            <span class="offer-num">03</span>
+            <h3>Wyposażenie i klimat</h3>
+            <p>Lampy, tkaniny, sztuka, dodatki i akcenty materiałowe dobierane tak, by wnętrze miało własny ton.</p>
+            <div class="offer-line"></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Gallery / Horizontal Scroll -->
+    <section class="gallery-section" id="projekty">
+      <div class="section-header" style="padding: 0 clamp(1rem, 4vw, 4rem);">
+        <span class="kicker"><span class="kicker-line"></span>Kadry</span>
+        <h2 class="section-title split-text">
+          Wnętrza PWR Design są <em>różne</em>, ale łączy je jedno: każdy kadr ma swoją temperaturę.
+        </h2>
+      </div>
+
+      <div class="gallery-scroll" id="gallery-scroll">
+        <div class="gallery-track" id="gallery-track">
+          <article class="gallery-card">
+            <div class="gallery-img">
+              <img src="assets/images/living-green.jpg" alt="Salon z zieloną sofą">
+            </div>
+            <div class="gallery-info">
+              <span>salon / światło</span>
+              <strong>Miękka baza, mocny gest.</strong>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <div class="gallery-img">
+              <img src="assets/images/dining-black.jpg" alt="Ciemna jadalnia">
+            </div>
+            <div class="gallery-info">
+              <span>jadalnia / kontrast</span>
+              <strong>Spokój i napięcie w jednej osi.</strong>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <div class="gallery-img">
+              <img src="assets/images/bath-green.png" alt="Łazienka z zielonymi płytkami">
+            </div>
+            <div class="gallery-info">
+              <span>łazienka / balans</span>
+              <strong>Materiał prowadzi nastrój.</strong>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <div class="gallery-img">
+              <img src="assets/images/bath-train.png" alt="Łazienka z muralem">
+            </div>
+            <div class="gallery-info">
+              <span>detal / odwaga</span>
+              <strong>Charakter może wejść nawet do małego wnętrza.</strong>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <div class="gallery-img">
+              <img src="assets/images/living-brick.png" alt="Salon z cegłą">
+            </div>
+            <div class="gallery-info">
+              <span>kolor / tekstura</span>
+              <strong>Wyraziste, ale nadal do życia.</strong>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <div class="gallery-img">
+              <img src="assets/images/wc-graphic.png" alt="Toaleta z geometryczną posadzką">
+            </div>
+            <div class="gallery-info">
+              <span>mikroprzestrzeń / rytm</span>
+              <strong>Nawet najmniejszy metraż zasługuje na pomysł.</strong>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proces -->
+    <section class="section" id="proces">
+      <div class="section-header">
+        <span class="kicker"><span class="kicker-line"></span>Proces</span>
+        <h2 class="section-title split-text">
+          Projekt powstaje krok po kroku, ale jego efekt ma być <em>natychmiast odczuwalny</em>.
+        </h2>
+      </div>
+
+      <div class="process-timeline">
+        <div class="process-line-wrap">
+          <div class="process-line-fill" id="process-line-fill"></div>
+        </div>
+
+        <div class="process-steps">
+          <article class="process-step fade-up">
+            <div class="process-dot"></div>
+            <span class="process-num">01</span>
+            <h3>Rozmowa i odczyt potrzeb</h3>
+            <p>Poznanie rytmu życia, oczekiwań, estetyki i realnych priorytetów.</p>
+          </article>
+          <article class="process-step fade-up">
+            <div class="process-dot"></div>
+            <span class="process-num">02</span>
+            <h3>Kierunek przestrzeni</h3>
+            <p>Układ funkcjonalny, światło, materiał i główny ton wnętrza.</p>
+          </article>
+          <article class="process-step fade-up">
+            <div class="process-dot"></div>
+            <span class="process-num">03</span>
+            <h3>Doprecyzowanie detalu</h3>
+            <p>Meble, zabudowy i wyposażenie, które spinają projekt w całość.</p>
+          </article>
+          <article class="process-step fade-up">
+            <div class="process-dot"></div>
+            <span class="process-num">04</span>
+            <h3>Finalny klimat</h3>
+            <p>Moment, w którym funkcja, emocja i charakter zaczynają pracować razem.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portrait / About -->
+    <section class="portrait-section">
+      <div class="portrait-grid">
+        <div class="portrait-img parallax-wrap">
+          <div class="img-reveal">
+            <img src="assets/images/paulina-portrait.jpg" alt="Paulina Wysokińska-Rączka" class="parallax-img">
+          </div>
+        </div>
+        <div class="portrait-text">
+          <span class="kicker"><span class="kicker-line"></span>Paulina Wysokińska-Rączka</span>
+          <h2 class="split-text">Autorka każdego <em>projektu</em></h2>
+          <p class="fade-up">Projektantka wnętrz z Sulejówka, która od 2018 roku prowadzi własną pracownię. Wierzy, że dobre wnętrze nie potrzebuje trendów — potrzebuje uważności, odwagi i szacunku dla codzienności.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="kontakt">
+      <div class="contact-inner">
+        <div class="contact-left">
+          <span class="kicker kicker-light"><span class="kicker-line kicker-line-light"></span>Kontakt</span>
+          <h2 class="contact-title split-text">
+            Stwórzmy razem Twój <em>idealny kąt</em>.
+          </h2>
+          <p class="contact-desc fade-up">
+            Jeśli szukasz wnętrza z własnym głosem, a nie kolejnej bezpiecznej kopii z katalogu, napisz lub zadzwoń.
+          </p>
+          <a class="btn btn-primary btn-light magnetic fade-up" href="mailto:pwrdesign.pracownia@gmail.com">
+            <span class="btn-text">Napisz do nas</span>
+            <span class="btn-arrow">→</span>
+          </a>
+        </div>
+
+        <div class="contact-right">
+          <div class="contact-item fade-up">
+            <span class="contact-label">Adres</span>
+            <p>ul. Sobieskiego 74<br>05-070 Sulejówek</p>
+          </div>
+          <div class="contact-item fade-up">
+            <span class="contact-label">Telefon</span>
+            <p><a href="tel:+48668698661">+48 668 698 661</a></p>
+          </div>
+          <div class="contact-item fade-up">
+            <span class="contact-label">E-mail</span>
+            <p><a href="mailto:pwrdesign.pracownia@gmail.com">pwrdesign.pracownia@gmail.com</a></p>
+          </div>
+          <div class="contact-item fade-up">
+            <span class="contact-label">Social</span>
+            <p>
+              <a href="https://www.instagram.com/pwr.design.007/" target="_blank" rel="noreferrer">Instagram</a>
+              <a href="https://www.facebook.com/profile.php?id=61581656475274" target="_blank" rel="noreferrer">Facebook</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-brand">PWR Design</span>
+      <span class="footer-copy">Autorska pracownia wnętrz i mebli</span>
+      <span class="footer-year" id="year"></span>
+    </div>
+  </footer>
+
+  <!-- GSAP + Plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
