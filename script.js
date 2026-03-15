@@ -382,17 +382,17 @@ function initAnimations() {
 
   // ─── Gallery Horizontal Scroll ───
   const galleryTrack = document.getElementById('gallery-track');
-  if (galleryTrack) {
-    const totalScroll = galleryTrack.scrollWidth - window.innerWidth;
+  if (galleryTrack && window.innerWidth > 768) {
+    const getScrollAmount = () => galleryTrack.scrollWidth - window.innerWidth + 100;
 
     gsap.to(galleryTrack, {
-      x: -totalScroll,
+      x: () => -getScrollAmount(),
       ease: 'none',
       scrollTrigger: {
         trigger: '.gallery-section',
-        start: 'top top',
-        end: () => `+=${totalScroll}`,
-        scrub: 1,
+        start: 'top 8%',
+        end: () => `+=${getScrollAmount() * 1.2}`,
+        scrub: 1.2,
         pin: true,
         anticipatePin: 1,
         invalidateOnRefresh: true
@@ -417,21 +417,5 @@ function initAnimations() {
   }
 
 
-  // ─── Marquee Speed on Scroll ───
-  const marqueeTrack = document.querySelector('.marquee-track');
-  if (marqueeTrack) {
-    gsap.to(marqueeTrack, {
-      animationDuration: '15s',
-      scrollTrigger: {
-        trigger: '.marquee',
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true,
-        onUpdate: (self) => {
-          marqueeTrack.style.animationDuration = (30 - self.progress * 18) + 's';
-        }
-      }
-    });
-  }
 
 }
