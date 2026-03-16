@@ -47,13 +47,12 @@ updateLoaderLine();
 
 // ─── Custom Cursor ───
 const cursor = document.querySelector('.cursor');
-const cursorDot = document.querySelector('.cursor-dot');
+const cursorPen = document.querySelector('.cursor-pen');
 const cursorRing = document.querySelector('.cursor-ring');
 
-let cursorX = window.innerWidth / 2;
-let cursorY = window.innerHeight / 2;
-let dotX = cursorX, dotY = cursorY;
-let ringX = cursorX, ringY = cursorY;
+let cursorX = -100, cursorY = -100;
+let penX = -100, penY = -100;
+let ringX = -100, ringY = -100;
 
 if (cursor && window.matchMedia('(pointer: fine)').matches) {
   document.addEventListener('mousemove', (e) => {
@@ -62,13 +61,14 @@ if (cursor && window.matchMedia('(pointer: fine)').matches) {
   });
 
   const animateCursor = () => {
-    dotX += (cursorX - dotX) * 0.5;
-    dotY += (cursorY - dotY) * 0.5;
-    ringX += (cursorX - ringX) * 0.15;
-    ringY += (cursorY - ringY) * 0.15;
+    penX += (cursorX - penX) * 0.45;
+    penY += (cursorY - penY) * 0.45;
+    ringX += (cursorX - ringX) * 0.12;
+    ringY += (cursorY - ringY) * 0.12;
 
-    cursorDot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
-    cursorRing.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
+    cursor.style.transform = `translate(${penX}px, ${penY}px)`;
+    cursorRing.style.left = `${ringX - penX}px`;
+    cursorRing.style.top = `${ringY - penY}px`;
 
     requestAnimationFrame(animateCursor);
   };
