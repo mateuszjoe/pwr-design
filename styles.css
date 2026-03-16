@@ -648,7 +648,7 @@ body:has(a:hover) .cursor-ring {
 
 .studio-img {
   border-radius: var(--radius);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .img-reveal {

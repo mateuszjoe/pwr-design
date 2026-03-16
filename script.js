@@ -404,7 +404,11 @@ function initAnimations() {
       });
     };
 
-    window.addEventListener('load', setupGallery);
+    // Run immediately since initAnimations is called after loader
+    setTimeout(() => {
+      setupGallery();
+      ScrollTrigger.refresh();
+    }, 100);
   }
 
 
