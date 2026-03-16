@@ -45,6 +45,57 @@ const updateLoaderLine = () => {
 updateLoaderLine();
 
 
+// ─── Pen Trail ───
+const trailCanvas = document.getElementById('pen-trail');
+if (trailCanvas && window.matchMedia('(pointer: fine)').matches) {
+  const ctx = trailCanvas.getContext('2d');
+  let trailPoints = [];
+  const maxPoints = 40;
+
+  const resizeCanvas = () => {
+    trailCanvas.width = window.innerWidth;
+    trailCanvas.height = window.innerHeight;
+  };
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  document.addEventListener('mousemove', (e) => {
+    trailPoints.push({ x: e.clientX, y: e.clientY, life: 1.0 });
+    if (trailPoints.length > maxPoints) trailPoints.shift();
+  });
+
+  const drawTrail = () => {
+    ctx.clearRect(0, 0, trailCanvas.width, trailCanvas.height);
+
+    if (trailPoints.length > 2) {
+      for (let i = 1; i < trailPoints.length; i++) {
+        const p = trailPoints[i];
+        const prev = trailPoints[i - 1];
+        const progress = i / trailPoints.length;
+
+        p.life -= 0.02;
+        if (p.life <= 0) continue;
+
+        const alpha = p.life * progress * 0.12;
+        const width = progress * 1.5;
+
+        ctx.beginPath();
+        ctx.moveTo(prev.x, prev.y);
+        ctx.lineTo(p.x, p.y);
+        ctx.strokeStyle = `rgba(200, 149, 108, ${alpha})`;
+        ctx.lineWidth = width;
+        ctx.lineCap = 'round';
+        ctx.stroke();
+      }
+    }
+
+    trailPoints = trailPoints.filter(p => p.life > 0);
+    requestAnimationFrame(drawTrail);
+  };
+
+  drawTrail();
+}
+
 // ─── Custom Cursor ───
 const cursor = document.querySelector('.cursor');
 const cursorPen = document.querySelector('.cursor-pen');
