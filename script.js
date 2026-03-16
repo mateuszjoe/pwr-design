@@ -382,22 +382,29 @@ function initAnimations() {
 
   // ─── Gallery Horizontal Scroll ───
   const galleryTrack = document.getElementById('gallery-track');
-  if (galleryTrack && window.innerWidth > 768) {
-    const getScrollAmount = () => galleryTrack.scrollWidth - window.innerWidth + 100;
+  const gallerySection = document.querySelector('.gallery-section');
+  if (galleryTrack && gallerySection && window.innerWidth > 768) {
+    const setupGallery = () => {
+      const scrollAmount = galleryTrack.scrollWidth - gallerySection.offsetWidth;
+      if (scrollAmount <= 0) return;
 
-    gsap.to(galleryTrack, {
-      x: () => -getScrollAmount(),
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.gallery-section',
-        start: 'top 8%',
-        end: () => `+=${getScrollAmount() * 1.2}`,
-        scrub: 1.2,
-        pin: true,
-        anticipatePin: 1,
-        invalidateOnRefresh: true
-      }
-    });
+      gsap.to(galleryTrack, {
+        x: -scrollAmount,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: gallerySection,
+          start: 'top top+=80',
+          end: `+=${scrollAmount + window.innerHeight * 0.5}`,
+          scrub: 0.8,
+          pin: true,
+          pinSpacing: true,
+          anticipatePin: 1,
+          invalidateOnRefresh: true
+        }
+      });
+    };
+
+    window.addEventListener('load', setupGallery);
   }
 
 
