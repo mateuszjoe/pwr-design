@@ -137,13 +137,12 @@ body:has(a:hover) .cursor-pen {
   gap: 0;
   font-size: clamp(2rem, 5vw, 3.5rem);
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--ink);
 }
 
 .loader-pwr {
-  font-family: 'Anton', sans-serif;
-  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
 }
 
 .loader-design {
@@ -191,20 +190,19 @@ body:has(a:hover) .cursor-pen {
 }
 
 .nav-brand-name {
-  font-family: 'Anton', sans-serif;
-  font-size: 1.4rem;
-  font-weight: 400;
-  letter-spacing: 0.05em;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink);
 }
 
 .nav-brand-sub {
   font-family: 'Inter', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 200;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--ink-dim);
 }
 
@@ -1118,12 +1116,11 @@ body:has(a:hover) .cursor-pen {
   gap: 0;
   font-size: 1.1rem;
   letter-spacing: 0.05em;
-  text-transform: uppercase;
 }
 
 .brand-pwr {
-  font-family: 'Anton', sans-serif;
-  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
   color: var(--ink);
 }
 
