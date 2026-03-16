@@ -439,17 +439,20 @@ function initAnimations() {
       const scrollAmount = galleryTrack.scrollWidth - gallerySection.offsetWidth;
       if (scrollAmount <= 0) return;
 
+      // Pin the gallery-scroll container (not the whole section)
+      // so the header scrolls away naturally first
+      const galleryScroll = document.getElementById('gallery-scroll');
+
       gsap.to(galleryTrack, {
         x: -scrollAmount,
         ease: 'none',
         scrollTrigger: {
-          trigger: gallerySection,
-          start: 'top top+=80',
-          end: `+=${scrollAmount + window.innerHeight * 0.5}`,
-          scrub: 0.8,
+          trigger: galleryScroll,
+          start: 'top top+=60',
+          end: `+=${scrollAmount + window.innerHeight * 0.3}`,
+          scrub: 0.6,
           pin: true,
           pinSpacing: true,
-          anticipatePin: 1,
           invalidateOnRefresh: true
         }
       });

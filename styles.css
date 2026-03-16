@@ -829,6 +829,8 @@ body:has(a:hover) .cursor-pen {
 
 .gallery-scroll {
   margin-top: clamp(3rem, 5vw, 5rem);
+  padding-top: 1rem;
+  padding-bottom: 2rem;
   overflow: visible;
 }
 
