@@ -1238,8 +1238,25 @@ body:has(a:hover) .cursor-pen {
     font-size: clamp(2.5rem, 10vw, 4rem);
   }
 
+  .gallery-scroll {
+    overflow: visible;
+  }
+
+  .gallery-track {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 1rem;
+  }
+
+  .gallery-track::-webkit-scrollbar {
+    display: none;
+  }
+
   .gallery-card {
-    width: 85vw;
+    width: 80vw;
+    scroll-snap-align: center;
   }
 
   .contact-right {
