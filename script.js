@@ -15,21 +15,15 @@ const loaderInterval = setInterval(() => {
   if (progress > 100) progress = 100;
   loaderNum.textContent = Math.round(progress);
   loaderLine.style.setProperty('--w', progress + '%');
-  loaderLine.querySelector('::after') // won't work, use CSS instead
-
   if (progress >= 100) {
     clearInterval(loaderInterval);
     setTimeout(() => {
-      gsap.to(loader, {
-        yPercent: -100,
-        duration: 1,
-        ease: 'power4.inOut',
-        onComplete: () => {
-          loader.classList.add('done');
-          loader.style.display = 'none';
-          initAnimations();
-        }
-      });
+      loader.classList.add('is-exiting');
+      setTimeout(() => {
+        loader.classList.add('done');
+        loader.style.display = 'none';
+        initAnimations();
+      }, 850);
     }, 400);
   }
 }, 80);
@@ -209,6 +203,19 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = `© ${new Date().getFullYear()}`;
 
+// ─── Temporary newsletter handoff ───
+document.querySelectorAll('[data-newsletter-form]').forEach(form => {
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const email = form.querySelector('input[type="email"]')?.value?.trim();
+    if (!email) return;
+
+    const subject = encodeURIComponent('Newsletter PWR Design');
+    const body = encodeURIComponent(`Cześć,\n\nchcę dołączyć do newslettera PWR Design.\nMój adres e-mail: ${email}\n`);
+    window.location.href = `mailto:pwrdesign.pracownia@gmail.com?subject=${subject}&body=${body}`;
+  });
+});
+
 
 // ─── Hero Particles ───
 const particlesContainer = document.getElementById('hero-particles');
@@ -247,15 +254,14 @@ function initAnimations() {
 
   // Hero text reveal
   gsap.from('.hero-kicker .line-inner', {
-    yPercent: 100,
+    yPercent: 40,
     duration: 1,
     ease: 'power4.out',
     delay: 0.2
   });
 
   gsap.from('.title-word', {
-    yPercent: 120,
-    opacity: 0,
+    yPercent: 36,
     duration: 1.2,
     stagger: 0.08,
     ease: 'power4.out',
@@ -263,7 +269,7 @@ function initAnimations() {
   });
 
   gsap.from('.hero-desc .line-inner', {
-    yPercent: 100,
+    yPercent: 32,
     duration: 1,
     stagger: 0.1,
     ease: 'power4.out',
@@ -271,7 +277,6 @@ function initAnimations() {
   });
 
   gsap.from('.hero-actions', {
-    opacity: 0,
     y: 30,
     duration: 1,
     ease: 'power3.out',
@@ -327,9 +332,8 @@ function initAnimations() {
 
   // ─── Fade Up Elements ───
   gsap.utils.toArray('.fade-up').forEach(el => {
-    gsap.to(el, {
-      opacity: 1,
-      y: 0,
+    gsap.from(el, {
+      y: 28,
       duration: 1,
       ease: 'power3.out',
       scrollTrigger: {
@@ -344,8 +348,7 @@ function initAnimations() {
   // ─── Section Titles ───
   gsap.utils.toArray('.section-title, .manifesto-text, .contact-title, .portrait-text h2').forEach(title => {
     gsap.from(title, {
-      opacity: 0,
-      y: 50,
+      y: 36,
       duration: 1.2,
       ease: 'power3.out',
       scrollTrigger: {
@@ -360,7 +363,6 @@ function initAnimations() {
   // ─── Kickers ───
   gsap.utils.toArray('.kicker').forEach(k => {
     gsap.from(k, {
-      opacity: 0,
       x: -30,
       duration: 0.8,
       ease: 'power3.out',

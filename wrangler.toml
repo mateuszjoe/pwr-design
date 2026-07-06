@@ -1,0 +1,10 @@
+name = "pwr-design"
+compatibility_date = "2026-07-06"
+workers_dev = true
+preview_urls = true
+
+[build]
+command = "npm run build"
+
+[assets]
+directory = "./dist"

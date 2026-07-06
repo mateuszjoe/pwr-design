@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mateuszjoe.github.io/pwr-design/sitemap.xml
+Sitemap: https://pwrdesign.pl/sitemap.xml
