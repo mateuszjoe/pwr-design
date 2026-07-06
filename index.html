@@ -115,7 +115,7 @@
   <link rel="icon" type="image/png" href="assets/images/pwr-logo-mark.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -243,9 +243,17 @@
     </section>
 
     <section class="section process-section" id="proces">
-      <div class="section-header">
-        <span class="kicker"><span class="kicker-line"></span>Proces</span>
-        <h2 class="section-title split-text">Każdy projekt to proces, który prowadzi do spójnej przestrzeni.</h2>
+      <div class="process-header-grid">
+        <div class="section-header">
+          <span class="kicker"><span class="kicker-line"></span>Proces</span>
+          <h2 class="section-title split-text">Każdy projekt to proces, który prowadzi do spójnej przestrzeni.</h2>
+        </div>
+        <div class="process-photo parallax-wrap fade-up">
+          <div class="img-reveal">
+            <img src="assets/images/studio-desk.jpg" alt="Próbki materiałów, rysunki techniczne i narzędzia projektowe na biurku PWR Design" class="parallax-img">
+          </div>
+          <span class="process-photo-label">Zza kulis / stół projektowy</span>
+        </div>
       </div>
 
       <div class="process-timeline">
@@ -287,7 +295,7 @@
     <section class="newsletter-band" id="checklista">
       <div class="newsletter-copy">
         <span class="kicker kicker-light"><span class="kicker-line kicker-line-light"></span>Checklista</span>
-        <h2>Największe błędy w projektowaniu wnętrz zaczynają się od chaosu.</h2>
+        <h2>Największe błędy w projektowaniu wnętrz zaczynają się od <span class="accent-word">chaosu.</span></h2>
         <p>Jeśli jesteś na etapie planowania, pobierz checklistę: "7 błędów, które niszczą wnętrza i jak ich uniknąć".</p>
       </div>
       <form class="newsletter-form" data-newsletter-form>
@@ -303,6 +311,7 @@
           <span class="btn-text">Pobierz</span>
           <span class="btn-arrow">→</span>
         </button>
+        <p class="form-hint">Otworzy się Twój program pocztowy z gotową wiadomością - wystarczy ją wysłać.</p>
       </form>
     </section>
 
@@ -363,7 +372,7 @@
     <section class="manifesto">
       <div class="manifesto-inner">
         <span class="kicker kicker-light"><span class="kicker-line kicker-line-light"></span>PWR Moment</span>
-        <h2 class="manifesto-text split-text">Każdy projekt zawiera element, który buduje jego charakter.</h2>
+        <h2 class="manifesto-text split-text">Każdy projekt zawiera element, który buduje jego <span class="accent-word">charakter.</span></h2>
         <p>To nie jest przypadkowy detal. To świadomie zaprojektowany moment - punkt, który przyciąga uwagę i nadaje przestrzeni tożsamość.</p>
         <div class="moment-list">
           <span>kompozycja ściany</span>
@@ -390,8 +399,10 @@
             <div class="gallery-info">
               <span>Salon / spokój</span>
               <h3>Miękka baza, mocny gest.</h3>
-              <p><strong>Potrzeba:</strong> wnętrze spokojne, ale nie neutralne.</p>
-              <p><strong>Decyzja:</strong> ciepłe drewno i zieleń jako punkt pamięci.</p>
+              <p><strong>Potrzeba:</strong> wnętrze spokojne, ale nie nudne.</p>
+              <p><strong>Problem:</strong> gotowe inspiracje wyglądały płasko i bez charakteru.</p>
+              <p><strong>Decyzja:</strong> ciepłe drewno i zieleń jako jeden punkt pamięci.</p>
+              <p><strong>Efekt:</strong> przestrzeń, która wycisza, ale zapada w pamięć.</p>
             </div>
           </article>
 
@@ -402,8 +413,10 @@
             <div class="gallery-info">
               <span>Jadalnia / kontrast</span>
               <h3>Spokój i napięcie w jednej osi.</h3>
-              <p><strong>Problem:</strong> przestrzeń potrzebowała charakteru bez chaosu.</p>
-              <p><strong>Efekt:</strong> rytm, głębia i czytelna kompozycja.</p>
+              <p><strong>Potrzeba:</strong> jadalnia połączona z kuchnią, ale z własnym charakterem.</p>
+              <p><strong>Problem:</strong> ciemna kolorystyka groziła optycznym zamknięciem wnętrza.</p>
+              <p><strong>Decyzja:</strong> głęboka czerń, wyrazista grafika i precyzyjne światło punktowe.</p>
+              <p><strong>Efekt:</strong> rytm, głębia i czytelna kompozycja bez ciężaru.</p>
             </div>
           </article>
 
@@ -414,8 +427,10 @@
             <div class="gallery-info">
               <span>Łazienka / materiał</span>
               <h3>Materiał prowadzi nastrój.</h3>
-              <p><strong>Potrzeba:</strong> małe wnętrze, które nie wygląda technicznie.</p>
+              <p><strong>Potrzeba:</strong> małe wnętrze, które nie ma wyglądać technicznie.</p>
+              <p><strong>Problem:</strong> ograniczony metraż wymuszał kompromisy funkcjonalne.</p>
               <p><strong>Decyzja:</strong> kolor, faktura i światło zamiast dekoracji.</p>
+              <p><strong>Efekt:</strong> łazienka, która czuje się jak reszta domu, nie jak dodatek.</p>
             </div>
           </article>
 
@@ -426,8 +441,38 @@
             <div class="gallery-info">
               <span>Detal / odwaga</span>
               <h3>Charakter może wejść nawet do małego wnętrza.</h3>
-              <p><strong>Problem:</strong> standardowa łazienka bez tożsamości.</p>
-              <p><strong>Efekt:</strong> jedno mocne miejsce, które zostaje w pamięci.</p>
+              <p><strong>Potrzeba:</strong> standardowa łazienka bez tożsamości.</p>
+              <p><strong>Problem:</strong> mały metraż zwykle wyklucza odważne decyzje.</p>
+              <p><strong>Decyzja:</strong> jedno mocne miejsce - mural jako centralny punkt.</p>
+              <p><strong>Efekt:</strong> wnętrze, które zostaje w pamięci mimo swojej skali.</p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <div class="gallery-img">
+              <img src="assets/images/living-brick.png" alt="Salon i jadalnia z cegłą, grafiką na ścianie i zielonym aksamitem">
+            </div>
+            <div class="gallery-info">
+              <span>Salon / faktura</span>
+              <h3>Dwie funkcje, jeden charakter.</h3>
+              <p><strong>Potrzeba:</strong> salon łączący jadalnię i wypoczynek w jednej otwartej przestrzeni.</p>
+              <p><strong>Problem:</strong> dwie różne funkcje groziły wizualnym rozjazdem materiałów.</p>
+              <p><strong>Decyzja:</strong> cegła i grafika na jednej ścianie jako wspólny mianownik obu stref.</p>
+              <p><strong>Efekt:</strong> przestrzeń, która działa jako jedna spójna kompozycja.</p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <div class="gallery-img">
+              <img src="assets/images/wc-graphic.png" alt="Małe WC z czarną ścianą i geometryczną płytką">
+            </div>
+            <div class="gallery-info">
+              <span>WC / PWR Moment</span>
+              <h3>Najmniejsze wnętrze też może mieć zdanie.</h3>
+              <p><strong>Potrzeba:</strong> najmniejsze pomieszczenie w mieszkaniu, łatwe do pominięcia.</p>
+              <p><strong>Problem:</strong> metraż nie zostawiał miejsca na dekorację.</p>
+              <p><strong>Decyzja:</strong> czerń jako tło i geometryczna płytka jako jedyny, mocny akcent.</p>
+              <p><strong>Efekt:</strong> mikro-przestrzeń, która zaskakuje i zapada w pamięć.</p>
             </div>
           </article>
         </div>
@@ -453,6 +498,7 @@
           <span class="btn-text">Dołącz</span>
           <span class="btn-arrow">→</span>
         </button>
+        <p class="form-hint">Otworzy się Twój program pocztowy z gotową wiadomością - wystarczy ją wysłać.</p>
       </form>
     </section>
 
@@ -536,7 +582,7 @@
         </div>
         <div class="portrait-text">
           <span class="kicker"><span class="kicker-line"></span>O mnie</span>
-          <h2 class="split-text">Nie projektuję wnętrz dla wszystkich.</h2>
+          <h2 class="split-text">Nie projektuję wnętrz dla <span class="accent-word">wszystkich.</span></h2>
           <p class="fade-up">Projektowanie to dla mnie coś więcej niż estetyka. To sposób myślenia o przestrzeni i o tym, jak wpływa ona na codzienne życie.</p>
           <p class="fade-up">Każdy projekt traktuję indywidualnie, szukając rozwiązań dopasowanych do konkretnej osoby. Nie tworzę wnętrz "ładnych". Tworzę wnętrza, które mają sens.</p>
           <div class="pwr-quote fade-up">
@@ -552,7 +598,7 @@
       <div class="contact-inner">
         <div class="contact-left">
           <span class="kicker kicker-light"><span class="kicker-line kicker-line-light"></span>Kontakt</span>
-          <h2 class="contact-title split-text">Jeśli czujesz, że to podejście jest Ci bliskie - porozmawiajmy.</h2>
+          <h2 class="contact-title split-text">Jeśli czujesz, że to podejście jest Ci bliskie - <span class="accent-word">porozmawiajmy.</span></h2>
           <p class="contact-desc fade-up">Opowiedz o przestrzeni, która ma zacząć działać inaczej. Zaczniemy od rozmowy, nie od przypadkowych inspiracji.</p>
           <div class="contact-actions fade-up">
             <a class="btn btn-light magnetic" href="mailto:pwrdesign.pracownia@gmail.com?subject=Konsultacja%20PWR%20Design">
@@ -599,8 +645,8 @@
       <span class="footer-copy">Autorska pracownia wnętrz i mebli</span>
       <nav class="footer-links" aria-label="Linki dodatkowe">
         <a href="#kontakt">Kontakt</a>
-        <a href="mailto:pwrdesign.pracownia@gmail.com">Polityka prywatności</a>
-        <a href="mailto:pwrdesign.pracownia@gmail.com">Regulamin strony</a>
+        <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+        <a href="regulamin.html">Regulamin strony</a>
       </nav>
       <span class="footer-year" id="year"></span>
     </div>

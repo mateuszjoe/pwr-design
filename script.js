@@ -39,91 +39,6 @@ const updateLoaderLine = () => {
 updateLoaderLine();
 
 
-// ─── Pen Trail ───
-const trailCanvas = document.getElementById('pen-trail');
-if (trailCanvas && window.matchMedia('(pointer: fine)').matches) {
-  const ctx = trailCanvas.getContext('2d');
-  let trailPoints = [];
-  const maxPoints = 40;
-
-  const resizeCanvas = () => {
-    trailCanvas.width = window.innerWidth;
-    trailCanvas.height = window.innerHeight;
-  };
-  resizeCanvas();
-  window.addEventListener('resize', resizeCanvas);
-
-  document.addEventListener('mousemove', (e) => {
-    trailPoints.push({ x: e.clientX, y: e.clientY, life: 1.0 });
-    if (trailPoints.length > maxPoints) trailPoints.shift();
-  });
-
-  const drawTrail = () => {
-    ctx.clearRect(0, 0, trailCanvas.width, trailCanvas.height);
-
-    if (trailPoints.length > 2) {
-      for (let i = 1; i < trailPoints.length; i++) {
-        const p = trailPoints[i];
-        const prev = trailPoints[i - 1];
-        const progress = i / trailPoints.length;
-
-        p.life -= 0.02;
-        if (p.life <= 0) continue;
-
-        const alpha = p.life * progress * 0.12;
-        const width = progress * 1.5;
-
-        ctx.beginPath();
-        ctx.moveTo(prev.x, prev.y);
-        ctx.lineTo(p.x, p.y);
-        ctx.strokeStyle = `rgba(200, 149, 108, ${alpha})`;
-        ctx.lineWidth = width;
-        ctx.lineCap = 'round';
-        ctx.stroke();
-      }
-    }
-
-    trailPoints = trailPoints.filter(p => p.life > 0);
-    requestAnimationFrame(drawTrail);
-  };
-
-  drawTrail();
-}
-
-// ─── Custom Cursor ───
-const cursor = document.querySelector('.cursor');
-const cursorPen = document.querySelector('.cursor-pen');
-const cursorRing = document.querySelector('.cursor-ring');
-
-let cursorX = -100, cursorY = -100;
-let penX = -100, penY = -100;
-let ringX = -100, ringY = -100;
-
-if (cursor && window.matchMedia('(pointer: fine)').matches) {
-  document.addEventListener('mousemove', (e) => {
-    cursorX = e.clientX;
-    cursorY = e.clientY;
-  });
-
-  const animateCursor = () => {
-    penX += (cursorX - penX) * 0.45;
-    penY += (cursorY - penY) * 0.45;
-    ringX += (cursorX - ringX) * 0.12;
-    ringY += (cursorY - ringY) * 0.12;
-
-    cursor.style.transform = `translate(${penX}px, ${penY}px)`;
-    cursorRing.style.left = `${ringX - penX}px`;
-    cursorRing.style.top = `${ringY - penY}px`;
-
-    requestAnimationFrame(animateCursor);
-  };
-
-  animateCursor();
-} else if (cursor) {
-  cursor.style.display = 'none';
-}
-
-
 // ─── Magnetic Buttons ───
 document.querySelectorAll('.magnetic').forEach(btn => {
   btn.addEventListener('mousemove', (e) => {
@@ -170,29 +85,6 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     const target = document.querySelector(link.getAttribute('href'));
     if (target) {
       e.preventDefault();
-      gsap.to(window, {
-        scrollTo: { y: target, offsetY: 80 },
-        duration: 1.2,
-        ease: 'power3.inOut'
-      });
-    }
-  });
-});
-
-// Load ScrollTo plugin inline since we're using CDN
-gsap.registerPlugin({
-  name: 'scrollTo',
-  init(target, value) {
-    // Fallback: use native smooth scroll
-  }
-});
-
-// Override smooth scroll with native for simplicity
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', (e) => {
-    const target = document.querySelector(link.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
@@ -215,38 +107,6 @@ document.querySelectorAll('[data-newsletter-form]').forEach(form => {
     window.location.href = `mailto:pwrdesign.pracownia@gmail.com?subject=${subject}&body=${body}`;
   });
 });
-
-
-// ─── Hero Particles ───
-const particlesContainer = document.getElementById('hero-particles');
-if (particlesContainer) {
-  for (let i = 0; i < 30; i++) {
-    const p = document.createElement('div');
-    p.classList.add('hero-particle');
-    p.style.left = Math.random() * 100 + '%';
-    p.style.top = Math.random() * 100 + '%';
-    particlesContainer.appendChild(p);
-
-    gsap.to(p, {
-      opacity: Math.random() * 0.5 + 0.1,
-      scale: Math.random() * 2 + 0.5,
-      duration: Math.random() * 3 + 2,
-      delay: Math.random() * 2,
-      repeat: -1,
-      yoyo: true,
-      ease: 'sine.inOut'
-    });
-
-    gsap.to(p, {
-      y: `random(-60, 60)`,
-      x: `random(-40, 40)`,
-      duration: Math.random() * 8 + 6,
-      repeat: -1,
-      yoyo: true,
-      ease: 'sine.inOut'
-    });
-  }
-}
 
 
 // ─── Main Animations ───
@@ -289,38 +149,9 @@ function initAnimations() {
     delay: 1.5
   });
 
-  // Hero images
-  gsap.from('#hero-img-main', {
-    opacity: 0,
-    scale: 0.9,
-    y: 60,
-    duration: 1.4,
-    ease: 'power3.out',
-    delay: 0.6
-  });
-
-  gsap.from('#hero-img-float', {
-    opacity: 0,
-    x: -40,
-    y: 40,
-    duration: 1.2,
-    ease: 'power3.out',
-    delay: 1
-  });
-
-  // Hero parallax on scroll
-  gsap.to('#hero-img-main', {
+  // Hero background parallax
+  gsap.to('.hero-media img', {
     y: -80,
-    scrollTrigger: {
-      trigger: '.hero',
-      start: 'top top',
-      end: 'bottom top',
-      scrub: 1
-    }
-  });
-
-  gsap.to('#hero-img-float', {
-    y: -40,
     scrollTrigger: {
       trigger: '.hero',
       start: 'top top',

@@ -18,6 +18,7 @@
   --radius: 8px;
   --rail: 104px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --font-accent: "Fraunces", "Playfair Display", serif;
 }
 
 *, *::before, *::after {
@@ -424,6 +425,10 @@ input {
 
 .title-word.accent {
   color: var(--sun);
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .hero-desc {
@@ -635,6 +640,13 @@ input {
   font-weight: 800;
 }
 
+.accent-word {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
 .fit-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -699,6 +711,43 @@ input {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.process-header-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(220px, 0.7fr);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: end;
+  margin-bottom: clamp(2.8rem, 5vw, 5rem);
+}
+
+.process-header-grid .section-header {
+  margin-bottom: 0;
+}
+
+.process-photo {
+  position: relative;
+}
+
+.process-photo .img-reveal {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.process-photo .img-reveal img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.process-photo-label {
+  display: block;
+  margin-top: 12px;
+  color: var(--terracotta);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .process-timeline {
@@ -883,6 +932,20 @@ input {
 .newsletter-form .consent input {
   margin-top: 3px;
   accent-color: var(--terracotta);
+}
+
+.form-hint {
+  margin-top: -2px;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 500;
+  color: rgba(238, 232, 221, 0.56);
+}
+
+.newsletter-band-soft .form-hint {
+  color: rgba(32, 48, 68, 0.58);
 }
 
 .offer-grid {
@@ -1245,8 +1308,11 @@ input {
 
 .pwr-quote strong {
   align-self: center;
-  font-size: 1.05rem;
-  letter-spacing: -0.03em;
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
 }
 
 .contact {
@@ -1355,6 +1421,97 @@ input {
   color: var(--terracotta);
 }
 
+.legal-body {
+  background: var(--cream);
+}
+
+.legal-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px clamp(20px, 5vw, 72px);
+  border-bottom: 1px solid var(--line);
+}
+
+.legal-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--navy);
+  font-weight: 800;
+}
+
+.legal-brand img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.legal-back {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.legal-back:hover {
+  color: var(--terracotta);
+}
+
+.legal-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: clamp(3rem, 8vw, 6rem) clamp(20px, 5vw, 72px) clamp(4rem, 8vw, 7rem);
+}
+
+.legal-page h1 {
+  margin-bottom: 8px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.legal-updated {
+  margin-bottom: 32px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.legal-page h2 {
+  margin: 40px 0 14px;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+}
+
+.legal-page p,
+.legal-page li {
+  color: var(--ink);
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.legal-page p {
+  margin-bottom: 14px;
+}
+
+.legal-page ul {
+  margin: 0 0 14px;
+  padding-left: 22px;
+}
+
+.legal-page li {
+  margin-bottom: 8px;
+}
+
+.legal-page a {
+  color: var(--terracotta);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .fade-up {
   opacity: 1;
   transform: none;
@@ -1426,6 +1583,7 @@ input {
 
   .fit-grid,
   .process-steps,
+  .process-header-grid,
   .offer-grid,
   .trust-grid,
   .seo-grid,
@@ -1434,6 +1592,10 @@ input {
   .contact-inner,
   .newsletter-band {
     grid-template-columns: 1fr;
+  }
+
+  .process-photo {
+    max-width: 320px;
   }
 
   .offer-card-featured {

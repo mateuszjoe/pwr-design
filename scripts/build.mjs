@@ -7,6 +7,8 @@ const outDir = resolve(rootDir, "dist");
 
 const publicFiles = [
   "index.html",
+  "polityka-prywatnosci.html",
+  "regulamin.html",
   "styles.css",
   "script.js",
   "robots.txt",
