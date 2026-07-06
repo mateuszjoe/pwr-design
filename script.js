@@ -63,6 +63,18 @@ window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 80);
 }, { passive: true });
 
+// ─── Back to top ───
+const backToTop = document.getElementById('back-to-top');
+if (backToTop) {
+  window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('visible', window.scrollY > 700);
+  }, { passive: true });
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
 burger.addEventListener('click', () => {
   const isOpen = mobileNav.classList.toggle('open');
   burger.classList.toggle('active');
