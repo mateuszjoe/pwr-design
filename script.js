@@ -75,6 +75,34 @@ if (backToTop) {
   });
 }
 
+// ─── Quick contact widget ───
+const quickContact = document.getElementById('quick-contact');
+const qcToggle = document.getElementById('qc-toggle');
+if (quickContact && qcToggle) {
+  window.addEventListener('scroll', () => {
+    quickContact.classList.toggle('visible', window.scrollY > 120);
+  }, { passive: true });
+
+  qcToggle.addEventListener('click', () => {
+    const isOpen = quickContact.classList.toggle('open');
+    qcToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!quickContact.contains(e.target)) {
+      quickContact.classList.remove('open');
+      qcToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      quickContact.classList.remove('open');
+      qcToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
 burger.addEventListener('click', () => {
   const isOpen = mobileNav.classList.toggle('open');
   burger.classList.toggle('active');
