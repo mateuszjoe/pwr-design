@@ -3,33 +3,51 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://pwrdesign.pl/</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <image:image>
       <image:loc>https://pwrdesign.pl/assets/images/pwr-design-projektowanie-wnetrz-warszawa-sulejowek.jpg</image:loc>
+      <image:title>PWR Design - projektowanie wnętrz Warszawa i Sulejówek</image:title>
+      <image:caption>Autorska pracownia projektowania wnętrz mieszkań, domów i przestrzeni komercyjnych w Warszawie, Sulejówku i online.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://pwrdesign.pl/assets/images/living-green.jpg</image:loc>
+      <image:loc>https://pwrdesign.pl/assets/images/pwr-realizacja-wolomin-salon.jpg</image:loc>
+      <image:title>Projekt salonu z zieloną sofą i okrągłym światłem</image:title>
+      <image:caption>Realizacja PWR Design: projekt wnętrza salonu z charakterystycznym punktem pamięci.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://pwrdesign.pl/assets/images/dining-black.jpg</image:loc>
+      <image:loc>https://pwrdesign.pl/assets/images/pwr-realizacja-sulejowek-kuchnia.jpg</image:loc>
+      <image:title>Projekt kuchni i jadalni w Sulejówku</image:title>
+      <image:caption>Projekt kuchni z zieloną wyspą, drewnem, cegłą i ciepłą paletą materiałów.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://pwrdesign.pl/assets/images/bath-green.jpg</image:loc>
+      <image:loc>https://pwrdesign.pl/assets/images/pwr-realizacja-industrial-japandi.jpg</image:loc>
+      <image:title>Projekt salonu industrial japandi</image:title>
+      <image:caption>Projekt salonu z miękką sofą, drewnem, betonem i ciemną kuchnią.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://pwrdesign.pl/assets/images/bath-train.jpg</image:loc>
+      <image:loc>https://pwrdesign.pl/assets/images/pwr-realizacja-kawalerka-man.jpg</image:loc>
+      <image:title>Projekt kompaktowej kawalerki</image:title>
+      <image:caption>Projekt małego mieszkania z aneksem kuchennym, sypialnią i przemyślanym układem funkcjonalnym.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://pwrdesign.pl/assets/images/living-brick.jpg</image:loc>
+      <image:loc>https://pwrdesign.pl/assets/images/pwr-realizacja-toaleta-glinianki.jpg</image:loc>
+      <image:title>Projekt małej toalety z muralem</image:title>
+      <image:caption>Projekt toalety z muralem stacji kolejowej, grafitem i czerwonym akcentem.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://pwrdesign.pl/assets/images/wc-graphic.jpg</image:loc>
+      <image:loc>https://pwrdesign.pl/assets/images/pwr-realizacja-biuro-jachty.jpg</image:loc>
+      <image:title>Projekt biura sprzedaży jachtów</image:title>
+      <image:caption>Projekt wnętrza komercyjnego z łukową ścianą lamelową, światłem i strefą rozmów z klientem.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://pwrdesign.pl/assets/images/studio-desk.jpg</image:loc>
+      <image:loc>https://pwrdesign.pl/assets/images/pwr-stol-projektowy-2026.jpg</image:loc>
+      <image:title>Materiały, światło i detal projektu wnętrza</image:title>
+      <image:caption>Detal projektowy pokazujący materiały, światło i kompozycję wnętrza.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://pwrdesign.pl/assets/images/paulina-portrait-2026.jpg</image:loc>
+      <image:title>Paulina Wysokińska-Rączka - projektant wnętrz PWR Design</image:title>
+      <image:caption>Projektant wnętrz i właścicielka autorskiej pracowni PWR Design w Sulejówku.</image:caption>
     </image:image>
   </url>
 </urlset>
