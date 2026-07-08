@@ -2,6 +2,62 @@
    PWR DESIGN - brand system 2026
    ============================================ */
 
+@font-face {
+  font-family: "Gilroy";
+  src: url("assets/fonts/gilroy-light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("assets/fonts/gilroy-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("assets/fonts/gilroy-medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("assets/fonts/gilroy-bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("assets/fonts/gilroy-heavy.ttf") format("truetype");
+  font-weight: 800 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Larken";
+  src: url("assets/fonts/larken-demo-bold.otf") format("opentype");
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Larken";
+  src: url("assets/fonts/larken-italic.otf") format("opentype");
+  font-weight: 700 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   --cream: #eee9df;
   --cream-2: #f7f2ea;
