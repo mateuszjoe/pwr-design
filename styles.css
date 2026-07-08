@@ -1085,6 +1085,10 @@ input {
   margin-bottom: 22px;
 }
 
+.manifesto .accent-word {
+  color: var(--navy-2);
+}
+
 .manifesto p {
   max-width: 760px;
   color: rgba(238, 233, 223, 0.76);
@@ -1093,7 +1097,11 @@ input {
 }
 
 .moment-closing {
+  display: inline-block;
   margin-top: 24px;
+  padding: 14px 18px;
+  background: var(--navy-2);
+  color: var(--cream);
   font-weight: 700;
 }
 
@@ -1106,9 +1114,10 @@ input {
 
 .moment-list span {
   padding: 12px 16px;
-  border: 1px solid rgba(238, 233, 223, 0.28);
+  border: 1px solid var(--navy-2);
   border-radius: 999px;
-  color: rgba(238, 233, 223, 0.84);
+  background: var(--navy-2);
+  color: var(--cream);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
