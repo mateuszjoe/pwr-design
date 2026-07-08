@@ -168,7 +168,7 @@ function initAnimations() {
     delay: 0.4
   });
 
-  gsap.from('.hero-desc .line-inner', {
+  gsap.from('.hero-subtitle .line-inner', {
     yPercent: 32,
     duration: 1,
     stagger: 0.1,
